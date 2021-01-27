@@ -1,26 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mcorda <mcorda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/01/23 13:55:56 by mcorda            #+#    #+#             */
-/*   Updated: 2021/01/27 11:12:13 by mcorda           ###   ########.fr       */
+/*   Created: 2021/01/27 16:29:24 by mcorda            #+#    #+#             */
+/*   Updated: 2021/01/27 16:41:08 by mcorda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strchr(const char *s, int c)
+char	*ft_strtrim(char const *s1, char const *set)
 {
-	if ((char)c == '\0')
-		return ((char *)s + ft_strlen(s));
-	while (*s)
-	{
-		if (*s == c)
-			return ((char *)s);
-		s++;
-	}
-	return (NULL);
+	size_t	i;
+	char	*str;
+
+	if (!s1 || !set)
+		return (NULL);
+	while (*s1 && ft_strchr(set, *s1))
+		s1++;
+	i = ft_strlen((char *)s1);
+	while (i && ft_strchr(set, s1[i]))
+		i--;
+	str = ft_substr((char*)s1, 0, i + 1);
+	return (str);
 }

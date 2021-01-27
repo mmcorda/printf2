@@ -6,7 +6,7 @@
 #    By: mcorda <mcorda@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/01/20 13:33:36 by mcorda            #+#    #+#              #
-#    Updated: 2021/01/23 17:29:52 by mcorda           ###   ########.fr        #
+#    Updated: 2021/01/27 17:32:22 by mcorda           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,11 +31,21 @@ SRCS = ft_isalpha.c \
         ft_memccpy.c \
 		ft_strchr.c \
 		ft_strrchr.c \
+		ft_strnstr.c \
 		ft_atoi.c \
 		ft_calloc.c \
 		ft_memchr.c \
 		ft_memcmp.c \
 		ft_memmove.c \
+		ft_strdup.c \
+		ft_strlcat.c \
+		ft_strlcpy.c \
+		ft_substr.c \
+		ft_strjoin.c \
+		ft_strtrim.c \
+		ft_itoa.c \
+		ft_strmapi.c \
+		ft_split.c \
 
 
 $(NAME): $(OBJ)
