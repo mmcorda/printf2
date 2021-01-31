@@ -6,7 +6,7 @@
 #    By: mcorda <mcorda@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/01/20 13:33:36 by mcorda            #+#    #+#              #
-#    Updated: 2021/01/27 17:32:22 by mcorda           ###   ########.fr        #
+#    Updated: 2021/01/31 15:18:25 by mcorda           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,6 +17,8 @@ OBJ = $(SRCS:.c=.o)
 CFLAGS += -Wall -Wextra -Werror
 
 SRCS = ft_isalpha.c \
+		ft_putchar.c \
+		ft_putnbr.c \
         ft_isascii.c \
         ft_isdigit.c \
         ft_isprint.c \
@@ -46,6 +48,21 @@ SRCS = ft_isalpha.c \
 		ft_itoa.c \
 		ft_strmapi.c \
 		ft_split.c \
+		ft_putstr_fd.c \
+		ft_putstr.c \
+		ft_putchar_fd.c \
+		ft_putnbr_fd.c \
+		ft_putendl_fd.c \
+		ft_putnbr_fd.c \
+		ft_lstadd_back.c \
+		ft_lstnew.c \
+		ft_lstlast.c \
+		ft_lstadd_front.c \
+		ft_lstclear.c \
+		ft_lstdelone.c \
+		ft_lstiter.c \
+		ft_lstmap.c \
+		ft_lstsize.c \
 
 
 $(NAME): $(OBJ)
