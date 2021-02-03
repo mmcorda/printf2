@@ -6,7 +6,7 @@
 /*   By: mcorda <mcorda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/27 11:15:31 by mcorda            #+#    #+#             */
-/*   Updated: 2021/01/27 11:26:48 by mcorda           ###   ########.fr       */
+/*   Updated: 2021/02/03 12:56:07 by mcorda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,8 @@ char	*ft_strdup(const char *src)
 	ok = 0;
 	while (src[ok])
 		ok++;
-	str = (char*)malloc(sizeof(*str) * (ok + 1));
+	if (!(str = (char*)malloc(sizeof(*str) * (ok + 1))))
+		return (NULL);
 	i = 0;
 	while (i < ok)
 	{
