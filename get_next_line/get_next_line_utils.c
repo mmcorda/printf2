@@ -6,53 +6,55 @@
 /*   By: mcorda <mcorda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/14 11:11:27 by mcorda            #+#    #+#             */
-/*   Updated: 2021/02/19 16:19:14 by mcorda           ###   ########.fr       */
+/*   Updated: 2021/03/04 11:23:20 by mcorda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-int		ft_strlen(const char *str)
+size_t		ft_strlen(const char *str)
 {
-	int		i;
+	size_t		i;
 
 	i = 0;
-	while (str[i] != '\0')
-	{
+	while (str[i])
 		i++;
-	}
 	return (i);
 }
 
-char	*ft_memalloc(size_t size)
+char		*ft_strplusone(size_t size)
 {
-	void	*dest;
+	return (ft_memalloc((size + 1) * sizeof(char)));
+}
 
-	if (!(malloc(size)))
+void		*ft_memalloc(size_t size)
+{
+	void	*ptr;
+
+	ptr = malloc(size);
+	if (ptr == NULL)
 		return (NULL);
-	ft_memset(dest, 0, size);
-	return (dest);
+	ft_memset(ptr, 0, size);
+	return (ptr);
 }
 
-void	*ft_memset(void *dest, int oct, size_t len)
+void		*ft_memset(void *dest, int oct, size_t len)
 {
-	char	*str;
-	size_t	i;
+	unsigned char	*ptr;
 
-	i = 0;
-	str = (char *)dest;
-	while (len > 0)
-		str[i++] = (unsigned char)oct;
+	ptr = (unsigned char *)dest;
+	while (len--)
+		*ptr++ = oct;
 	return (dest);
 }
 
-int		ft_memdel(char **ptr)
+int			ft_memdel(void **ptr)
 {
 	if (*ptr)
 	{
 		ft_memset(*ptr, 0, ft_strlen(*ptr));
 		free(*ptr);
-		*ptr == NULL;
+		*ptr = NULL;
 		return (1);
 	}
 	return (0);
